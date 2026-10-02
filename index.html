@@ -63,50 +63,68 @@
       will-change: transform;
       pointer-events: none;
     }
+    /* 각 원이 서로 다른 궤도를 아주 느리게 한 바퀴 돈다 (0%=100%라 끊김 없이 순환) */
     .orb-1 {
-      width: 42vw; height: 42vw; left: -19vw; top: -21vw;
-      background: #FBDAE4;
-      animation: orb-drift-a 62s ease-in-out infinite alternate;
+      width: 34vw; height: 34vw; left: -16vw; top: -17vw;
+      background: #FBDCE6;
+      animation: orb-roam-a 68s linear infinite;
     }
     .orb-2 {
-      width: 38vw; height: 38vw; right: -17vw; bottom: -19vw;
-      background: #FBE3EB;
-      animation: orb-drift-b 74s ease-in-out infinite alternate;
+      width: 29vw; height: 29vw; right: -14vw; bottom: -15vw;
+      background: #FCE4EC;
+      animation: orb-roam-b 86s linear infinite;
     }
     .orb-3 {
-      width: 21vw; height: 21vw; right: 3vw; top: -13vw;
-      background: rgba(42,53,96,0.07);
-      animation: orb-drift-c 56s ease-in-out infinite alternate;
+      width: 20vw; height: 20vw; right: 4vw; top: -11vw;
+      background: rgba(42,53,96,0.065);
+      animation: orb-roam-c 74s linear infinite;
     }
     .orb-4 {
-      width: 16vw; height: 16vw; left: 6vw; bottom: -9vw;
+      width: 15vw; height: 15vw; left: 6vw; bottom: -8vw;
       background: rgba(42,53,96,0.05);
-      animation: orb-drift-d 68s ease-in-out infinite alternate;
+      animation: orb-roam-d 92s linear infinite;
     }
     .orb-5 {
-      width: 11vw; height: 11vw; right: 26vw; top: -6vw;
-      background: rgba(240,101,149,0.10);
-      animation: orb-drift-e 48s ease-in-out infinite alternate;
+      width: 10vw; height: 10vw; right: 28vw; top: -5vw;
+      background: rgba(240,101,149,0.095);
+      animation: orb-roam-e 58s linear infinite;
     }
-    @keyframes orb-drift-a {
+    @keyframes orb-roam-a {
       0%   { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(4vw, 3vw) scale(1.06); }
+      22%  { transform: translate(26vw, 16vh) scale(1.08); }
+      45%  { transform: translate(58vw, 44vh) scale(0.92); }
+      68%  { transform: translate(34vw, 72vh) scale(1.04); }
+      86%  { transform: translate(6vw, 48vh) scale(0.98); }
+      100% { transform: translate(0, 0) scale(1); }
     }
-    @keyframes orb-drift-b {
-      0%   { transform: translate(0, 0) scale(1.05); }
-      100% { transform: translate(-3.5vw, -3vw) scale(1); }
-    }
-    @keyframes orb-drift-c {
-      0%   { transform: translate(0, 0); }
-      100% { transform: translate(-3vw, 3.5vw); }
-    }
-    @keyframes orb-drift-d {
+    @keyframes orb-roam-b {
       0%   { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(3.5vw, -2vw) scale(1.1); }
+      26%  { transform: translate(-30vw, -22vh) scale(1.12); }
+      52%  { transform: translate(-62vw, -54vh) scale(0.94); }
+      76%  { transform: translate(-24vw, -74vh) scale(1.06); }
+      100% { transform: translate(0, 0) scale(1); }
     }
-    @keyframes orb-drift-e {
+    @keyframes orb-roam-c {
       0%   { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(-4vw, 3vw) scale(0.9); }
+      20%  { transform: translate(-22vw, 28vh) scale(1.15); }
+      44%  { transform: translate(-56vw, 12vh) scale(0.9); }
+      70%  { transform: translate(-38vw, 62vh) scale(1.08); }
+      88%  { transform: translate(-10vw, 30vh) scale(1); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+    @keyframes orb-roam-d {
+      0%   { transform: translate(0, 0) scale(1); }
+      24%  { transform: translate(34vw, -26vh) scale(1.18); }
+      50%  { transform: translate(68vw, -58vh) scale(0.95); }
+      74%  { transform: translate(40vw, -20vh) scale(1.1); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+    @keyframes orb-roam-e {
+      0%   { transform: translate(0, 0) scale(1); }
+      25%  { transform: translate(-26vw, 38vh) scale(1.25); }
+      50%  { transform: translate(-54vw, 16vh) scale(0.85); }
+      75%  { transform: translate(-20vw, 56vh) scale(1.12); }
+      100% { transform: translate(0, 0) scale(1); }
     }
     @media (prefers-reduced-motion: reduce) { .orb { animation: none !important; } }
     /* 스크롤이 About에 닿을 때까지 흰색이 덮어옴 (JS가 --scroll-fade 갱신) */
