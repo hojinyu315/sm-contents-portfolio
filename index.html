@@ -173,17 +173,20 @@
       line-height: 1.1;
     }
 
-    nav ul { list-style: none; display: flex; gap: 34px; align-items: center; }
+    nav ul { list-style: none; display: flex; gap: 10px; align-items: center; }
 
     nav ul a {
       color: var(--dyn-fg-dim);
       text-decoration: none;
       font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-      font-size: 15px;
-      font-weight: 400;
-      letter-spacing: 0.2px;
-      text-transform: none;
-      padding: 2px 0;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border: 1.4px solid transparent;
+      border-radius: 999px;
+      transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
       background: transparent;
       border: none;
       border-bottom: 1.5px solid transparent;
@@ -191,8 +194,8 @@
       transition: color 0.2s, border-color 0.2s;
     }
 
-    nav ul a:hover { color: var(--dyn-fg); border-bottom-color: var(--dyn-line); }
-    nav ul a.active { color: var(--dyn-fg); border-bottom-color: var(--dyn-fg); }
+    nav ul a:hover { color: var(--navy); border-color: rgba(42,53,96,0.3); }
+    nav ul a.active { color: var(--navy); border-color: var(--navy); }
 
     html.fg-dark nav { background: rgba(255, 255, 255, 0.86); border-bottom: 1px solid #EEE; }
 
@@ -424,18 +427,19 @@
     }
     .hero-pill {
       display: inline-block;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.35);
-      color: var(--dyn-fg);
+      background: var(--navy);
+      border: 1px solid transparent;
+      color: #F7A8C4;
       font-size: 12px;
       font-weight: 700;
-      padding: 5px 12px;
+      letter-spacing: 0.2px;
+      padding: 7px 16px;
       border-radius: 999px;
       margin-left: 12px;
       transition: color 0.35s ease, background 0.35s ease, border-color 0.35s ease;
       position: relative; top: -1px;
     }
-    html.fg-dark .hero-pill { background: var(--accent); border-color: transparent; color: #1A1A1A; }
+    html.fg-dark .hero-pill { background: var(--navy); border-color: transparent; color: #F7A8C4; }
 
     .hero-brand-name {
       font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
@@ -1319,13 +1323,7 @@ html.hero-in-view #scroll-bg { animation-play-state: running; }
 
 nav { transition: background .35s ease, box-shadow .35s ease, border-color .35s ease; }
 nav.has-scrolled { box-shadow: 0 8px 30px rgba(35, 20, 74, .06); }
-nav ul a { position: relative; border-bottom-color: transparent !important; }
-nav ul a::after {
-  content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
-  background: currentColor; transform: scaleX(0); transform-origin: left;
-  transition: transform .32s cubic-bezier(.22, 1, .36, 1);
-}
-nav ul a:is(:hover, :focus-visible, .active)::after { transform: scaleX(1); }
+nav ul a { position: relative; }
 
 .section-title, .sec-dark .section-title { position: relative; border-bottom-color: transparent; }
 .section-title::after {
